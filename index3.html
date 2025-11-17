@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes"/>
+  <meta name="description" content="KREAD.in – India's most elite restaurant growth partner. Transform your F&B brand with proven strategies from Michelin-starred leaders. Operating in Mumbai, Delhi, Bangalore, Hyderabad, Pune, and Chennai."/>
+  <meta name="keywords" content="restaurant consulting, F&B growth, luxury restaurant brand, hospitality consulting, India, Mumbai, Delhi, Bangalore"/>
+  <meta name="author" content="KREAD.in"/>
+  <meta name="theme-color" content="#0f1112"/>
+  <meta property="og:title" content="KREAD.in – India's Most Elite Restaurant Growth Partner"/>
+  <meta property="og:description" content="Transform your restaurant brand with proven strategies from Michelin-starred leaders and hospitality experts."/>
+  <meta property="og:type" content="website"/>
+  <title>KREAD.in – Restaurant Growth Partner | India's #1 F&B Consulting</title>
+
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  
+  <!-- Fonts + Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  
+  <!-- ECharts for interactive map -->
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+
+  <style>
+    /********************************
+      ANIMATIONS & KEYFRAMES
+    *********************************/
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes glow {
+      0%, 100% { box-shadow: 0 0 20px rgba(212, 175, 55, 0.2); }
+      50% { box-shadow: 0 0 40px rgba(212, 175, 55, 0.4); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes countUp {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /********************************
+      PREMIUM MICHELIN COLOR SYSTEM (DARK THEME)
+    *********************************/
+    :root {
+      --surface: #0f1112;      /* main page background */
+      --dark: #0b0c0d;         /* hero + footer darker */
+      --dark2: #141516;
+
+      --cream: #0f1112;       /* kept for compatibility but maps to surface */
+      --cream-soft: #121314;  /* subtle panels */
+      --cream-card: #17181a;  /* card background */
+
+      --text-dark: #dcdcdc;   /* primary readable text on dark bg */
+      --text-light: #ffffff;  /* highlights */
+      --text-muted: #9a9a9a;  /* muted text */
+
+      --gold: #D4AF37;
+      --red: #B32428;         /* deep premium red */
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--surface);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1,h2,h3,h4,h5 { 
+      font-family: 'Playfair Display', serif; 
+      letter-spacing: -0.5px;
+    }
+
+    /********************************
+      NAVBAR (dark transparent)
+    *********************************/
+    .navbar {
+      background: rgba(11,12,13,0.78);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+      transition: all .4s ease;
+      padding: 1rem 0;
+    }
+    
+    .navbar.scrolled { 
+      background: rgba(11,12,13,0.96);
+      box-shadow: 0 4px 30px rgba(0,0,0,0.35);
+      padding: 0.7rem 0;
+    }
+
+    .navbar-brand {
+      color: var(--text-light) !important;
+      font-weight: 700;
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      transition: all .3s ease;
+    }
+    
+    .navbar-brand:hover { color: var(--gold) !important; }
+    .navbar-brand span { color: var(--gold); }
+
+    .nav-link {
+      color: #dcdcdc !important;
+      font-weight: 500;
+      font-size: 0.95rem;
+      position: relative;
+      transition: all .3s ease;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      transition: width .3s ease;
+    }
+    
+    .nav-link:hover::after { width: 100%; }
+    .nav-link:hover { color: var(--gold) !important; }
+
+    .navbar-toggler { 
+      border: 1px solid rgba(255,255,255,0.06) !important;
+      padding: 0.5rem 0.75rem;
+      transition: all .3s ease;
+    }
+    
+    .navbar-toggler:focus { 
+      box-shadow: 0 0 0 0.25rem rgba(212, 175, 55, 0.12);
+    }
+
+    /********************************
+      HERO (dark premium)
+    *********************************/
+    .hero {
+      background: 
+        linear-gradient(135deg, rgba(11,12,13,0.82), rgba(179, 36, 40, 0.18)),
+        url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=1500')
+        center/cover no-repeat;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-light);
+      text-align: center;
+      padding: clamp(2rem, 8vw, 6rem) 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.06) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(179, 36, 40, 0.03) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .hero > * { 
+      animation: fadeInUp 1s ease forwards;
+      animation-fill-mode: both;
+    }
+
+    .hero h1 { 
+      font-size: clamp(2rem, 7vw, 4.5rem);
+      line-height: 1.2;
+      animation-delay: 0.2s;
+      letter-spacing: -1px;
+      font-weight: 700;
+    }
+
+    .hero p { 
+      color: #d0d0d0; 
+      font-size: clamp(0.95rem, 2.5vw, 1.2rem);
+      animation-delay: 0.4s;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero .btn-gold {
+      animation-delay: 0.6s;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold), #e8ca70);
+      color: #000;
+      border-radius: 50px;
+      padding: clamp(12px, 2vw, 15px) clamp(30px, 4vw, 42px);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all .35s cubic-bezier(0.34, 1.56, 0.64, 1);
+      border: 2px solid transparent;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-gold::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: left .5s ease;
+    }
+
+    .btn-gold:hover::before { left: 100%; }
+    
+    .btn-gold:hover { 
+      background: linear-gradient(135deg, #e8ca70, var(--gold));
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.2);
+    }
+
+    .btn-gold:active { transform: translateY(-1px); }
+
+    /********************************
+      SECTIONS (dark surfaces)
+    *********************************/
+    section { 
+      padding: clamp(3rem, 8vw, 5rem) 1rem; 
+      background: var(--surface);
+      position: relative;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      margin-bottom: 1.5rem;
+      text-align: center;
+      color: var(--text-light);
+      animation: fadeInUp .8s ease;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    /********************************
+      PREMIUM CARDS
+    *********************************/
+    .premium-card {
+      background: var(--cream-card);
+      border: 1px solid rgba(255,255,255,0.03);
+      border-radius: 20px;
+      padding: clamp(20px, 5vw, 32px);
+      transition: all .4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      animation: fadeInUp .8s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .premium-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.04), transparent);
+      transition: left .6s ease;
+    }
+
+    .premium-card:hover::before { left: 100%; }
+
+    .premium-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--gold);
+      box-shadow: 0 15px 40px rgba(212, 175, 55, 0.1);
+    }
+
+    .icon-box {
+      width: 70px; 
+      height: 70px;
+      background: linear-gradient(135deg, var(--cream-soft), #121314);
+      border-radius: 16px;
+      display: flex; 
+      align-items: center; 
+      justify-content: center;
+      margin: 0 auto 18px;
+      color: var(--red);
+      font-size: 1.8rem;
+      transition: all .4s ease;
+      box-shadow: 0 4px 15px rgba(179, 36, 40, 0.06);
+    }
+
+    .premium-card:hover .icon-box {
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: 0 8px 25px rgba(179, 36, 40, 0.12);
+    }
+
+    /********************************
+      STATS
+    *********************************/
+    .stat {
+      font-size: clamp(1.8rem, 6vw, 3rem);
+      font-weight: 700;
+      color: var(--red);
+      animation: countUp .8s ease;
+    }
+
+    /********************************
+      PLANS (highlight middle)
+    *********************************/
+    .plan-highlight {
+      border: 2px solid var(--red) !important;
+      transform: scale(1.05);
+      box-shadow: 0 20px 50px rgba(179, 36, 40, 0.12);
+    }
+
+    .plan-highlight:hover {
+      transform: scale(1.08) translateY(-12px);
+    }
+
+    /********************************
+      CONTACT FORM
+    *********************************/
+    .form-control {
+      background: var(--cream-soft);
+      border: 1.5px solid rgba(255,255,255,0.04);
+      border-radius: 12px;
+      padding: 12px 16px;
+      font-size: 0.95rem;
+      transition: all .3s ease;
+      font-family: 'Inter', sans-serif;
+      color: var(--text-light);
+    }
+
+    .form-control:focus {
+      background: var(--cream-card);
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.06);
+      color: var(--text-light);
+    }
+
+    .form-control::placeholder {
+      color: rgba(255,255,255,0.4);
+    }
+
+    textarea.form-control {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    /********************************
+      FOOTER (dark premium)
+    *********************************/
+    footer {
+      background: var(--dark);
+      color: var(--text-light);
+      padding: clamp(2.5rem, 6vw, 4rem) 1rem;
+      border-top: 1px solid rgba(255,255,255,0.03);
+      position: relative;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .footer-brand { 
+      font-size: clamp(1.2rem, 3vw, 1.5rem); 
+      font-weight: 700;
+      animation: slideInUp .8s ease;
+    }
+
+    .footer-brand span { color: var(--gold); }
+
+    .social-btn {
+      width: 45px; 
+      height: 45px;
+      border-radius: 12px;
+      background: var(--dark2);
+      display: inline-flex; 
+      align-items: center; 
+      justify-content: center;
+      color: var(--text-light);
+      border: 1.5px solid rgba(255,255,255,0.06);
+      transition: all .35s cubic-bezier(0.34, 1.56, 0.64, 1);
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 1.1rem;
+    }
+
+    .social-btn:hover { 
+      background: linear-gradient(135deg, var(--red), #c94334);
+      color: #fff; 
+      transform: translateY(-4px);
+      border-color: var(--red);
+      box-shadow: 0 8px 20px rgba(179, 36, 40, 0.18);
+    }
+
+    /********************************
+      SCROLL ANIMATIONS
+    *********************************/
+    .fade-in {
+      opacity: 0;
+      animation: fadeInUp .8s ease forwards;
+    }
+
+    .fade-in:nth-child(1) { animation-delay: 0.1s; }
+    .fade-in:nth-child(2) { animation-delay: 0.2s; }
+    .fade-in:nth-child(3) { animation-delay: 0.3s; }
+
+    /********************************
+      RESPONSIVE DESIGN
+    *********************************/
+    @media (max-width: 768px) {
+      .navbar { padding: 0.8rem 0; }
+      
+      .hero {
+        min-height: 80vh;
+        padding: 5rem 1rem 3rem;
+      }
+
+      .section-title {
+        margin-bottom: 2rem;
+      }
+
+      section { padding: 2.5rem 1rem; }
+
+      .premium-card {
+        padding: 24px 18px;
+        border-radius: 16px;
+      }
+
+      .plan-highlight {
+        transform: scale(1);
+        margin: -10px 0;
+      }
+
+      .plan-highlight:hover {
+        transform: translateY(-8px) scale(1.02);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .navbar-brand { font-size: 1.1rem; }
+      
+      .hero h1 { 
+        font-size: 1.8rem;
+        margin-top: 3rem;
+      }
+
+      .hero p { font-size: 0.9rem; }
+
+      .btn-gold {
+        padding: 10px 24px;
+        font-size: 0.85rem;
+      }
+
+      .premium-card {
+        padding: 18px 14px;
+        margin-bottom: 1rem;
+      }
+
+      .icon-box {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+      }
+
+      .stat {
+        font-size: 2rem;
+      }
+
+      .form-control {
+        padding: 10px 14px;
+        font-size: 0.9rem;
+      }
+
+      textarea.form-control {
+        min-height: 100px;
+      }
+
+      .social-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .navbar-brand {
+        font-size: 0.95rem;
+      }
+
+      .hero h1 {
+        font-size: 1.5rem;
+      }
+
+      .btn-gold {
+        padding: 8px 20px;
+        font-size: 0.8rem;
+      }
+
+      .premium-card {
+        padding: 14px 12px;
+      }
+
+      section {
+        padding: 1.5rem 0.75rem;
+      }
+    }
+
+    @media (min-width: 1920px) {
+      .container {
+        max-width: 1400px;
+      }
+
+      .premium-card {
+        padding: 36px 32px;
+      }
+
+      section {
+        padding: 6rem 0;
+      }
+    }
+
+    /* High contrast mode support */
+    @media (prefers-contrast: more) {
+      :root {
+        --gold: #f0dd5e;
+        --red: #e84c42;
+      }
+
+      .text-muted {
+        color: #bbb !important;
+      }
+    }
+
+    /* Dark mode check */
+    @media (prefers-color-scheme: dark) {
+      body {
+        color-scheme: dark;
+      }
+    }
+
+    /********************************
+      INDIA MAP SECTION
+    *********************************/
+    .map-section {
+      background: linear-gradient(135deg, #0f1011 0%, #1a1212 100%);
+      min-height: 600px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .map-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.04) 0%, transparent 50%),
+        radial-gradient(circle at 70% 80%, rgba(179, 36, 40, 0.02) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .map-container {
+      position: relative;
+      height: 600px;
+      width: 100%;
+      z-index: 1;
+    }
+
+    .map-container canvas {
+      display: block;
+      width: 100% !important;
+      height: 100% !important;
+    }
+
+    .map-title {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding-top: 2rem;
+      color: var(--text-light);
+    }
+
+    .map-title h2 {
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+
+    .map-title p {
+      color: #d0d0d0;
+      font-size: clamp(0.95rem, 2vw, 1.05rem);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+      .map-section {
+        min-height: 500px;
+      }
+
+      .map-container {
+        height: 450px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .map-section {
+        min-height: 400px;
+      }
+
+      .map-container {
+        height: 350px;
+      }
+
+      .map-title {
+        padding-top: 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">KREAD<span>.in</span></a>
+
+    <button class="navbar-toggler text-light" data-bs-toggle="collapse" data-bs-target="#nav">
+      <i class="bi bi-list fs-1"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto gap-3">
+        <li><a class="nav-link" href="#home">Home</a></li>
+        <li><a class="nav-link" href="#about">About</a></li>
+        <li><a class="nav-link" href="#services">Services</a></li>
+        <li><a class="nav-link" href="#locations">Locations</a></li>
+        <li><a class="nav-link" href="#plans">Plans</a></li>
+        <li><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container">
+    <h1>We Turn Restaurants Into <span style="color:var(--gold)">Legacy Brands</span></h1>
+    <p class="mt-3">India’s Most Trusted Premium F&B Growth Partner • 10+ Brands • ₹1Cr+ Revenue • 3 Cities</p>
+
+    <a href="#contact" class="btn-gold mt-4">Book Free Strategy Call →</a>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats-section">
+  <div class="container text-center">
+    <div class="row g-4">
+
+      <div class="col-md-4 fade-in">
+        <div class="premium-card">
+          <div class="stat" data-target="10">10+</div>
+          <p class="mt-2">Premium Brands Transformed</p>
+        </div>
+      </div>
+
+      <div class="col-md-4 fade-in">
+        <div class="premium-card">
+          <div class="stat" data-target="100">₹1Cr+</div>
+          <p class="mt-2">Revenue Generated</p>
+        </div>
+      </div>
+
+      <div class="col-md-4 fade-in">
+        <div class="premium-card">
+          <div class="stat" data-target="3">3</div>
+          <p class="mt-2">Cities Operated</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+
+    <h2 class="section-title">Why Top Restaurateurs Choose KREAD</h2>
+
+    <p class="text-center text-muted mb-4" style="max-width:780px;margin:auto;">
+      We architect hospitality success using frameworks trusted by India’s most respected F&B founders and luxury hotel leaders.
+    </p>
+
+    <div class="row g-4">
+
+      <div class="col-md-6 fade-in">
+        <div class="premium-card text-center">
+          <div class="icon-box"><i class="bi bi-trophy fs-3"></i></div>
+          <h5 class="mt-3">Proven Track Record</h5>
+          <p class="text-muted">120+ restaurants achieved 3X–10X growth in under 18 months.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 fade-in">
+        <div class="premium-card text-center">
+          <div class="icon-box"><i class="bi bi-stars fs-3"></i></div>
+          <h5 class="mt-3">Elite Team</h5>
+          <p class="text-muted">Ex-Marriott, Taj, Oberoi, Zomato & Swiggy leaders working on your brand.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <h2 class="section-title">Our Elite Services</h2>
+
+    <div class="row g-4">
+
+      <div class="col-md-4 fade-in">
+        <div class="premium-card text-center">
+          <div class="icon-box"><i class="bi bi-graph-up-arrow fs-3"></i></div>
+          <h5 class="mt-3" style="font-size: clamp(1rem, 2vw, 1.2rem);">Growth Strategy</h5>
+          <p class="text-muted mt-2">Menu engineering, pricing mastery, expansion blueprints.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4 fade-in">
+        <div class="premium-card text-center">
+          <div class="icon-box"><i class="bi bi-megaphone fs-3"></i></div>
+          <h5 class="mt-3" style="font-size: clamp(1rem, 2vw, 1.2rem);">Luxury Marketing</h5>
+          <p class="text-muted mt-2">Influencers, campaigns, brand experiences and storytelling.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4 fade-in">
+        <div class="premium-card text-center">
+          <div class="icon-box"><i class="bi bi-person-arms-up fs-3"></i></div>
+          <h5 class="mt-3" style="font-size: clamp(1rem, 2vw, 1.2rem);">World-Class Training</h5>
+          <p class="text-muted mt-2">Systems inspired by 7-star hospitality excellence.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- INDIA MAP SECTION -->
+<section class="map-section" id="locations">
+  <div class="map-title">
+    <h2>Where We Operate</h2>
+    <p>Serving India's most elite restaurants across 6 major metropolitan cities</p>
+  </div>
+  <div id="mapContainer" class="map-container"></div>
+</section>
+
+<!-- PLANS -->
+<section id="plans">
+  <div class="container">
+    <h2 class="section-title text-center">Choose Your Growth Tier</h2>
+
+    <div class="row g-4 justify-content-center">
+
+      <div class="col-md-4 fade-in">
+        <div class="premium-card">
+          <h4 style="font-size: clamp(1.1rem, 2vw, 1.3rem);">Starter</h4>
+          <h2 class="text-light mt-2" style="font-size: clamp(1.8rem, 4vw, 2.2rem);">₹59,999</h2>
+          <p class="text-muted mt-3">Ideal for new or single-unit restaurants.</p>
+          <ul class="text-start text-muted small mt-3" style="list-style: none; padding: 0;">
+            <li>✓ Menu audit</li>
+            <li>✓ Pricing strategy</li>
+            <li>✓ 30-day support</li>
+          </ul>
+          <a href="#contact" class="btn-gold w-100 mt-4" style="text-align: center;">Get Started</a>
+        </div>
+      </div>
+
+      <div class="col-md-4 fade-in">
+        <div class="premium-card plan-highlight">
+          <span style="background: var(--gold); color: #000; padding: 6px 14px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; display: inline-block; margin-bottom: 10px;">MOST POPULAR</span>
+          <h4 style="font-size: clamp(1.1rem, 2vw, 1.3rem);">Elite</h4>
+          <h2 class="text-light mt-2" style="font-size: clamp(1.8rem, 4vw, 2.2rem);">₹1,79,999</h2>
+          <p class="text-muted mt-3">Our flagship high-impact transformation package.</p>
+          <ul class="text-start text-muted small mt-3" style="list-style: none; padding: 0;">
+            <li>✓ Complete brand audit</li>
+            <li>✓ Marketing strategy</li>
+            <li>✓ Staff training</li>
+            <li>✓ 90-day support</li>
+          </ul>
+          <a href="#contact" class="btn-gold w-100 mt-4" style="text-align: center;">Start Transformation</a>
+        </div>
+      </div>
+
+      <div class="col-md-4 fade-in">
+        <div class="premium-card">
+          <h4 style="font-size: clamp(1.1rem, 2vw, 1.3rem);">Enterprise</h4>
+          <h2 class="text-light mt-2" style="font-size: clamp(1.8rem, 4vw, 2.2rem);">Custom</h2>
+          <p class="text-muted mt-3">For restaurant chains & hospitality groups.</p>
+          <ul class="text-start text-muted small mt-3" style="list-style: none; padding: 0;">
+            <li>✓ Multi-location support</li>
+            <li>✓ Custom solutions</li>
+            <li>✓ Dedicated team</li>
+            <li>✓ 12-month partnership</li>
+          </ul>
+          <a href="#contact" class="btn-gold w-100 mt-4" style="text-align: center;">Contact Us</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title text-center">Start Your Growth Journey</h2>
+
+    <div class="row g-4 align-items-stretch">
+
+      <div class="col-lg-6 fade-in">
+        <form id="contactForm" class="needs-validation" novalidate>
+          <input class="form-control mb-3" type="text" placeholder="Your Name" required aria-label="Your Name">
+          <input class="form-control mb-3" type="text" placeholder="Restaurant / Brand Name" required aria-label="Restaurant Name">
+          <input class="form-control mb-3" type="tel" placeholder="Phone Number" required aria-label="Phone Number">
+          <input class="form-control mb-3" type="email" placeholder="Email (optional)" aria-label="Email">
+          <textarea class="form-control mb-3" placeholder="Tell us about your goals..." required aria-label="Your message"></textarea>
+          <button type="submit" class="btn-gold w-100" style="text-align: center;">Book Free Strategy Call →</button>
+          <small class="text-muted d-block mt-2">We'll contact you within 24 hours</small>
+        </form>
+      </div>
+
+      <div class="col-lg-6 fade-in">
+        <div class="premium-card h-100">
+          <h5 style="font-size: clamp(1.1rem, 2vw, 1.3rem); margin-bottom: 1.5rem;"><i class="bi bi-telephone-fill" style="color: var(--red); margin-right: 10px;"></i> Call Us</h5>
+          <p class="mb-4"><a href="tel:+919876543210" style="text-decoration: none; color: var(--text-light); font-weight: 600;">+91 98765 43210</a></p>
+
+          <h5 style="font-size: clamp(1.1rem, 2vw, 1.3rem); margin-bottom: 1.5rem;"><i class="bi bi-envelope-fill" style="color: var(--red); margin-right: 10px;"></i> Email</h5>
+          <p class="mb-4"><a href="mailto:hello@kread.in" style="text-decoration: none; color: var(--text-light); font-weight: 600;">hello@kread.in</a></p>
+
+          <h5 style="font-size: clamp(1.1rem, 2vw, 1.3rem); margin-bottom: 1.5rem;"><i class="bi bi-geo-alt-fill" style="color: var(--red); margin-right: 10px;"></i> HQ</h5>
+          <p>Bandra West, Mumbai</p>
+
+          <div class="mt-5 pt-3 border-top">
+            <p class="text-muted small mb-3">Follow us</p>
+            <div class="d-flex gap-2">
+              <a href="#" class="social-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="social-btn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+              <a href="#" class="social-btn" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="row g-4 mb-4">
+      <div class="col-md-4">
+        <div class="footer-brand">KREAD<span>.in</span></div>
+        <p class="text-light small mt-2">India's Most Elite Restaurant Growth Partner</p>
+      </div>
+      <div class="col-md-4">
+        <h6 class="text-light mb-3">Quick Links</h6>
+        <ul class="list-unstyled">
+          <li><a href="#about" style="text-decoration: none; color: #dcdcdc; font-size: 0.9rem;" class="text-decoration-none">About</a></li>
+          <li><a href="#services" style="text-decoration: none; color: #dcdcdc; font-size: 0.9rem;" class="text-decoration-none">Services</a></li>
+          <li><a href="#plans" style="text-decoration: none; color: #dcdcdc; font-size: 0.9rem;" class="text-decoration-none">Plans</a></li>
+          <li><a href="#contact" style="text-decoration: none; color: #dcdcdc; font-size: 0.9rem;" class="text-decoration-none">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h6 class="text-light mb-3">Follow Us</h6>
+        <div class="d-flex gap-2">
+          <a class="social-btn" href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a class="social-btn" href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a class="social-btn" href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <hr style="border-color: rgba(255,255,255,0.03);">
+    <p class="mt-4 text-light text-center" style="font-size: 0.85rem;">© 2025 KREAD.in — All Rights Reserved. | <a href="#" style="color: var(--gold); text-decoration: none;">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // ==========================================
+  // NAVBAR SCROLL EFFECT
+  // ==========================================
+  const nav = document.querySelector('.navbar');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  // ==========================================
+  // INTERSECTION OBSERVER FOR ANIMATIONS
+  // ==========================================
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.animation = `fadeInUp 0.8s ease forwards`;
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // Observe all fade-in elements
+  document.querySelectorAll('.fade-in').forEach(el => {
+    observer.observe(el);
+  });
+
+  // ==========================================
+  // FORM VALIDATION & SUBMISSION
+  // ==========================================
+  const form = document.getElementById('contactForm');
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      if (!form.checkValidity()) {
+        form.classList.add('was-validated');
+        return;
+      }
+
+      // Collect form data
+      const formData = new FormData(form);
+      const data = {
+        name: form.querySelector('input[aria-label="Your Name"]').value,
+        restaurant: form.querySelector('input[aria-label="Restaurant Name"]').value,
+        phone: form.querySelector('input[aria-label="Phone Number"]').value,
+        email: form.querySelector('input[aria-label="Email"]').value || 'Not provided',
+        message: form.querySelector('textarea').value
+      };
+
+      // Log form data (replace with actual API call)
+      console.log('Form submitted:', data);
+      
+      // Show success message
+      const button = form.querySelector('button');
+      const originalText = button.textContent;
+      button.textContent = '✓ Request Received!';
+      button.style.background = 'linear-gradient(135deg, #4caf50, #45a049)';
+      
+      setTimeout(() => {
+        button.textContent = originalText;
+        button.style.background = '';
+        form.reset();
+        form.classList.remove('was-validated');
+      }, 3000);
+    });
+  }
+
+  // ==========================================
+  // SMOOTH SCROLL ANCHOR LINKS
+  // ==========================================
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href !== '#' && document.querySelector(href)) {
+        e.preventDefault();
+        document.querySelector(href).scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+
+  // ==========================================
+  // STAT COUNTER ANIMATION
+  // ==========================================
+  let statsAnimated = false;
+  
+  const statsSection = document.querySelector('.stats-section');
+  if (statsSection) {
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !statsAnimated) {
+          statsAnimated = true;
+          animateStats();
+          statsObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    statsObserver.observe(statsSection);
+  }
+
+  function animateStats() {
+    const stats = document.querySelectorAll('.stat');
+    stats.forEach(stat => {
+      const target = stat.getAttribute('data-target');
+      if (target) {
+        let current = 0;
+        const increment = target / 30;
+        
+        const counter = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            stat.textContent = stat.textContent; // Keep original text
+            clearInterval(counter);
+          } else {
+            const progress = Math.floor(current);
+            if (progress > 0) {
+              stat.textContent = stat.textContent.replace(/\d+/, progress);
+            }
+          }
+        }, 30);
+      }
+    });
+  }
+
+  // ==========================================
+  // PARALLAX EFFECT (HERO SECTION)
+  // ==========================================
+  const hero = document.querySelector('.hero');
+  if (hero) {
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      hero.style.backgroundPosition = `center ${scrollY * 0.5}px`;
+    });
+  }
+
+  // ==========================================
+  // TOOLTIP INITIALIZATION (Bootstrap)
+  // ==========================================
+  document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => {
+    new bootstrap.Tooltip(el);
+  });
+
+  // ==========================================
+  // ACCESSIBILITY: FOCUS MANAGEMENT
+  // ==========================================
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      // Close any open modals or menus
+      const offcanvas = document.querySelector('.offcanvas.show');
+      if (offcanvas) {
+        bootstrap.Offcanvas.getInstance(offcanvas).hide();
+      }
+    }
+  });
+
+  // ==========================================
+  // MOBILE MENU CLOSE ON LINK CLICK
+  // ==========================================
+  const navLinks = document.querySelectorAll('.navbar-collapse a');
+  const navToggle = document.querySelector('.navbar-toggler');
+  
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (navToggle.offsetParent !== null) { // Check if visible (mobile)
+        navToggle.click();
+      }
+    });
+  });
+
+  // ==========================================
+  // PAGE LOAD ANIMATION
+  // ==========================================
+  window.addEventListener('load', () => {
+    document.body.style.opacity = '1';
+    initIndiaMap();
+  });
+
+  // ==========================================
+  // INDIA MAP INITIALIZATION
+  // ==========================================
+  function initIndiaMap() {
+    const mapContainer = document.getElementById('mapContainer');
+    if (!mapContainer) return;
+
+    const chart = echarts.init(mapContainer, null, { useDirtyRect: true });
+
+    const cities = [
+      { name: 'Mumbai', coord: [72.8479, 19.0760], value: 10 },
+      { name: 'Delhi', coord: [77.2090, 28.6139], value: 9 },
+      { name: 'Bangalore', coord: [77.5946, 12.9716], value: 8 },
+      { name: 'Hyderabad', coord: [78.4711, 17.3850], value: 7 },
+      { name: 'Pune', coord: [73.8567, 18.5204], value: 6 },
+      { name: 'Chennai', coord: [80.2707, 13.0827], value: 5 }
+    ];
+
+    const option = {
+      backgroundColor: 'transparent',
+      title: {
+        show: false
+      },
+      tooltip: {
+        trigger: 'item',
+        backgroundColor: 'rgba(11, 12, 13, 0.9)',
+        borderColor: '#D4AF37',
+        borderWidth: 1,
+        textStyle: {
+          color: '#fff',
+          fontSize: 12
+        },
+        formatter: function(params) {
+          if (params.componentSubType === 'scatter') {
+            return `<strong>${params.name}</strong>`;
+          }
+          return '';
+        }
+      },
+      geo: {
+        map: 'india',
+        roam: true,
+        label: {
+          emphasis: {
+            show: false
+          }
+        },
+        itemStyle: {
+          normal: {
+            areaColor: '#171819',
+            borderColor: '#252525'
+          },
+          emphasis: {
+            areaColor: '#232324'
+          }
+        }
+      },
+      series: [
+        {
+          name: 'Headquarters',
+          type: 'effectScatter',
+          coordinateSystem: 'geo',
+          data: cities.sort(function(a, b) {
+            return b.value - a.value;
+          }),
+          symbolSize: function(val) {
+            return val / 2;
+          },
+          showEffectOn: 'render',
+          rippleEffect: {
+            brushType: 'stroke',
+            scale: 3,
+            period: 4
+          },
+          hoverAnimation: true,
+          label: {
+            formatter: '{b}',
+            position: 'bottom',
+            show: true,
+            color: '#D4AF37',
+            fontSize: 11,
+            fontWeight: 'bold',
+            distance: 8
+          },
+          itemStyle: {
+            color: '#D4AF37',
+            shadowBlur: 10,
+            shadowColor: '#D4AF37'
+          },
+          zlevel: 1
+        }
+      ]
+    };
+
+    // Load India map data
+    fetch('https://echarts.apache.org/dist/echarts-gl/data/simplifed-india.json')
+      .then(response => response.json())
+      .then(data => {
+        echarts.registerMap('india', data);
+        chart.setOption(option);
+      })
+      .catch(() => {
+        // Fallback if map data fails to load - still show the chart without geo map
+        const fallbackOption = {
+          backgroundColor: 'transparent',
+          tooltip: { trigger: 'item' },
+          series: [
+            {
+              name: 'Our Locations',
+              type: 'scatter',
+              symbolSize: 20,
+              data: cities.map(c => [c.coord[0], c.coord[1], c.value]),
+              itemStyle: {
+                color: '#D4AF37',
+                shadowBlur: 10,
+                shadowColor: '#D4AF37'
+              },
+              label: {
+                formatter: '{b}',
+                show: true,
+                color: '#fff'
+              }
+            }
+          ]
+        };
+        chart.setOption(fallbackOption);
+      });
+
+    // Handle responsive resize
+    window.addEventListener('resize', () => {
+      chart.resize();
+    });
+
+    // Store chart instance for later use
+    window.mapChart = chart;
+  }
+
+  console.log('%c KREAD.in v3.0 - Dark Theme Copy Ready', 'color: #D4AF37; font-size: 14px; font-weight: bold;');
+</script>
+
+</body>
+</html>

@@ -121,6 +121,53 @@
       border-color: var(--gold);
     }
 
+    /* Contact card typography & spacing (improves font/specing) */
+    .premium-card h5 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 0.35rem;
+      color: var(--text-dark);
+    }
+
+    .premium-card p,
+    .premium-card address,
+    .premium-card .text-muted {
+      font-family: 'Inter', sans-serif;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+      line-height: 1.45;
+      font-size: 0.95rem;
+    }
+
+    .premium-card a {
+      color: var(--text-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .premium-card a:hover {
+      color: var(--gold);
+      text-decoration: underline;
+    }
+
+    /* Outline button style tuned to theme */
+    .btn-outline-dark {
+      border: 2px solid rgba(0,0,0,0.08);
+      background: transparent;
+      color: var(--text-dark);
+      font-weight: 600;
+      border-radius: 40px;
+      padding: 10px 18px;
+      transition: all .18s ease;
+    }
+
+    .btn-outline-dark:hover {
+      background: rgba(0,0,0,0.04);
+      color: var(--text-dark);
+      transform: translateY(-2px);
+    }
+
     .icon-box {
       width: 60px; height: 60px;
       background: var(--cream-soft);
@@ -206,9 +253,9 @@
 <section class="hero" id="home">
   <div class="container">
     <h1>We Turn Restaurants Into <span style="color:var(--gold)">Legacy Brands</span></h1>
-    <p class="mt-3">India’s Most Trusted Premium F&B Growth Partner • 300+ Brands • ₹1200Cr+ Revenue • 22 Cities</p>
+    <p class="mt-3">India’s Most Trusted Premium F&B Growth Partner • 10+ Brands • ₹1Cr+ Revenue • 3 Cities</p>
 
-    <a href="#contact" class="btn-gold mt-4">Book Your Free Strategy Call →</a>
+    <a href="#contact" class="btn-gold mt-4">Book Free Strategy Call →</a>
   </div>
 </section>
 
@@ -219,21 +266,21 @@
 
       <div class="col-md-4">
         <div class="premium-card">
-          <div class="stat">300+</div>
+          <div class="stat">10+</div>
           <p>Premium Brands Transformed</p>
         </div>
       </div>
 
       <div class="col-md-4">
         <div class="premium-card">
-          <div class="stat">₹1200Cr+</div>
+          <div class="stat">₹1Cr+</div>
           <p>Revenue Generated</p>
         </div>
       </div>
 
       <div class="col-md-4">
         <div class="premium-card">
-          <div class="stat">22</div>
+          <div class="stat">3</div>
           <p>Cities Operated</p>
         </div>
       </div>
@@ -363,16 +410,53 @@
       </div>
 
       <div class="col-lg-6">
-        <div class="premium-card h-100">
-          <h5><i class="bi bi-telephone-fill"></i> Call Us</h5>
-          <p>+91 98765 43210</p>
+        <aside class="premium-card h-100" role="region" aria-labelledby="contact-info-title">
+          <h5 id="contact-info-title" class="mb-3"><i class="bi bi-headset me-2" aria-hidden="true"></i> Get in touch</h5>
 
-          <h5><i class="bi bi-envelope-fill"></i> Email</h5>
-          <p>hello@kread.in</p>
+          <div class="row g-3 align-items-center">
+            <div class="col-2 col-sm-2">
+              <div style="width:56px;height:56px;border-radius:12px;background:var(--dark2);display:flex;align-items:center;justify-content:center;color:var(--text-light);">
+                <i class="bi bi-telephone-fill"></i>
+              </div>
+            </div>
+            <div class="col-10 col-sm-10">
+              <div class="fw-bold">Phone</div>
+              <a href="tel:+919876543210" class="text-decoration-none">+91 98765 43210</a>
+            </div>
 
-          <h5><i class="bi bi-geo-alt-fill"></i> HQ</h5>
-          <p>Bandra West, Mumbai</p>
-        </div>
+            <div class="col-2 col-sm-2">
+              <div style="width:56px;height:56px;border-radius:12px;background:var(--dark2);display:flex;align-items:center;justify-content:center;color:var(--text-light);">
+                <i class="bi bi-envelope-fill"></i>
+              </div>
+            </div>
+            <div class="col-10 col-sm-10">
+              <div class="fw-bold">Email</div>
+              <a href="mailto:hello@kread.in" class="text-decoration-none">hello@kread.in</a>
+            </div>
+
+            <div class="col-2 col-sm-2">
+              <div style="width:56px;height:56px;border-radius:12px;background:var(--dark2);display:flex;align-items:center;justify-content:center;color:var(--text-light);">
+                <i class="bi bi-geo-alt-fill"></i>
+              </div>
+            </div>
+            <div class="col-10 col-sm-10">
+              <div class="fw-bold">Location</div>
+              <div>Bandra West, Mumbai</div>
+              <a href="https://www.google.com/maps/search/Bandra+West+Mumbai" target="_blank" rel="noopener noreferrer" class="text-decoration-none small">Get directions</a>
+            </div>
+          </div>
+
+          <div class="mt-3">
+            <div class="fw-bold mb-1">Business hours</div>
+            <div class="text-muted small">Mon–Sat: 10:00 — 19:00 • Sun: Closed</div>
+          </div>
+
+          <div class="d-grid gap-2 mt-4">
+            <a href="tel:+919876543210" class="btn btn-gold" aria-label="Call now">Call Now</a>
+            <a href="mailto:hello@kread.in" class="btn btn-outline-dark" aria-label="Send email">Email Us</a>
+          </div>
+          
+        </aside>
       </div>
 
     </div>
