@@ -369,6 +369,36 @@ textarea.form-control {
     min-height: 120px;
 }
 
+
+/* Contact section mobile optimization */
+@media (max-width: 576px) {
+  #contact .premium-card {
+    padding: 20px;
+  }
+
+  .contact-icon-box {
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  #contact h5 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Icon box style */
+.contact-icon-box {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: var(--dark2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-light);
+}
+
+
 /********************************
     FOOTER (dark premium)
 *********************************/
