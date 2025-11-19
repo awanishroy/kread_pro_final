@@ -107,28 +107,33 @@ statsObserver.observe(statsSection);
 }
 
 function animateStats() {
-const stats = document.querySelectorAll('.stat');
-stats.forEach(stat => {
-    const target = stat.getAttribute('data-target');
-    if (target) {
+  const stats = document.querySelectorAll('.stat');
+
+  stats.forEach(stat => {
+    let targetText = stat.getAttribute('data-target');
+    if (!targetText) return;
+
+    // Extract only numbers (ex: "150%" → 150, "200+" → 200)
+    let target = parseInt(targetText.replace(/\D/g, ''));
+
     let current = 0;
-    const increment = target / 30;
-    
+    let duration = 1500; // animation time in ms
+    let frameRate = 30;
+    let increment = target / (duration / frameRate);
+
     const counter = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-        stat.textContent = stat.textContent; // Keep original text
+      current += increment;
+
+      if (current >= target) {
+        stat.textContent = targetText; // final text with % or +
         clearInterval(counter);
-        } else {
-        const progress = Math.floor(current);
-        if (progress > 0) {
-            stat.textContent = stat.textContent.replace(/\d+/, progress);
-        }
-        }
-    }, 30);
-    }
-});
+      } else {
+        stat.textContent = current.toFixed(0) + targetText.replace(/\d/g, '');
+      }
+    }, frameRate);
+  });
 }
+
 
 // ==========================================
 // PARALLAX EFFECT (HERO SECTION)
