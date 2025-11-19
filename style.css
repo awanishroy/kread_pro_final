@@ -64,7 +64,7 @@
     --text-light: #ffffff;
     --text-muted: #6F6F6F;
 
-    --gold: #D4AF37;
+    --gold: #d6a810;
     --red: #B32428;         /* deep premium red */
 }
 
@@ -251,7 +251,8 @@ h1,h2,h3,h4,h5 {
 *********************************/
 section { 
     padding: clamp(3rem, 8vw, 5rem) 1rem; 
-    background: var(--cream);
+    /* background: var(--cream); */
+    background: rgb(0, 0, 0);
     position: relative;
 }
 
@@ -259,7 +260,7 @@ section {
     font-size: clamp(1.8rem, 5vw, 2.8rem);
     margin-bottom: 1.5rem;
     text-align: center;
-    color: var(--text-dark);
+    color: var(--gold);
     animation: fadeInUp .8s ease;
     font-weight: 700;
     letter-spacing: -0.5px;
@@ -403,11 +404,22 @@ textarea.form-control {
     FOOTER (dark premium)
 *********************************/
 footer {
-    background: var(--dark);
+    background: linear-gradient(
+        135deg,
+        /* #7a0000 0%, */
+        #b30000 20%,
+        #000000 50%,
+        #3a2f00 70%,
+        #4b2a2a 100%
+    );
+    /* padding: 40px 0; */
+
     color: var(--text-light);
     padding: clamp(2.5rem, 6vw, 4rem) 1rem;
     border-top: 1px solid rgba(255,255,255,0.08);
     position: relative;
+
+    
 }
 
 footer::before {
