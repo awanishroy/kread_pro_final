@@ -252,7 +252,15 @@ h1,h2,h3,h4,h5 {
 section { 
     padding: clamp(3rem, 8vw, 5rem) 1rem; 
     /* background: var(--cream); */
-    background: rgb(0, 0, 0);
+    /* background: rgb(0, 0, 0); */
+        background: linear-gradient(
+        135deg,
+        /* #7a0000 0%, */
+        #7a0404 10%,
+        #000000 50%,
+        #3a2f00 70%,
+        #4b2a2a 100%
+    );
     position: relative;
 }
 
