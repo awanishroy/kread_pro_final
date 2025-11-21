@@ -326,3 +326,36 @@ window.mapChart = chart;
 }
 
 console.log('%c KREAD.in v3.0 - Production Ready | Premium Loaded', 'color: #D4AF37; font-size: 14px; font-weight: bold;');
+
+
+
+  const lines = [
+    "WE HELP RESTAURANTS AND CLOUD KITCHENS INCREASE ORDERS, OPTIMIZE OPERATIONS, AND MAXIMIZE PROFITABILITY THROUGH DATA-DRIVEN STRATEGIES AND PROVEN SYSTEMS.",
+    "INDIA’S MOST TRUSTED PREMIUM F&B GROWTH PARTNER • 10+ BRANDS • ₹1CR+ REVENUE • 3 CITIES",
+    "YOUR GROWTH JOURNEY STARTS HERE WITH KREAD"
+  ];
+
+  const ids = ["line1", "line2", "line3"];
+  let lineIndex = 0;
+  let charIndex = 0;
+
+  function typeLine() {
+    const currentLine = lines[lineIndex];
+    const element = document.getElementById(ids[lineIndex]);
+
+    if (charIndex < currentLine.length) {
+      element.innerHTML += currentLine.charAt(charIndex);
+      charIndex++;
+      setTimeout(typeLine, 35); // typing speed
+    } else {
+      // Line finished → move to next after delay
+      lineIndex++;
+      charIndex = 0;
+
+      if (lineIndex < lines.length) {
+        setTimeout(typeLine, 800); // delay between lines
+      }
+    }
+  }
+
+  typeLine();

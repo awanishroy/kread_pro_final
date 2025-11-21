@@ -4,14 +4,14 @@
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes"/>
-    <meta name="description" content="KREAD.in – India's most elite restaurant growth partner. Transform your F&B brand with proven strategies from Michelin-starred leaders. Operating in Mumbai, Delhi, Bangalore, Hyderabad, Pune, and Chennai."/>
+    <meta name="description" content="KREAD India's most elite restaurant growth partner. Transform your F&B brand with proven strategies from Michelin-starred leaders. Operating in Mumbai, Delhi, Bangalore, Hyderabad, Pune, and Chennai."/>
     <meta name="keywords" content="restaurant consulting, F&B growth, luxury restaurant brand, hospitality consulting, India, Mumbai, Delhi, Bangalore"/>
-    <meta name="author" content="KREAD.in"/>
+    <meta name="author" content="KREAD"/>
     <meta name="theme-color" content="#111214"/>
-    <meta property="og:title" content="KREAD.in – India's Most Elite Restaurant Growth Partner"/>
+    <meta property="og:title" content="KREAD – India's Most Elite Restaurant Growth Partner"/>
     <meta property="og:description" content="Transform your restaurant brand with proven strategies from Michelin-starred leaders and hospitality experts."/>
     <meta property="og:type" content="website"/>
-    <title>KREAD.in – Restaurant Growth Partner | India's #1 F&B Consulting</title>
+    <title>KREAD – Restaurant Growth Partner | India's #1 F&B Consulting</title>
 
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,7 +48,7 @@
     <!-- NAV -->
     <nav class="navbar navbar-expand-lg fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">KREAD<span>.in</span></a>
+        <a class="navbar-brand" href="#">KREAD</a>
 
         <button class="navbar-toggler text-light" data-bs-toggle="collapse" data-bs-target="#nav">
           <i class="bi bi-list fs-1"></i>
@@ -74,10 +74,10 @@
 
         <h1>WE TURN RESTAURANTS INTO <span style="color:var(--gold)">LEGACY BRANDS</span></h1>
 
-        <p class="mt-3">WE HELP RESTAURANTS AND CLOUD KITCHENS INCREASE ORDERS, OPTIMIZE OPERATIONS, AND MAXIMIZE PROFITABILITY THROUGH DATA-DRIVEN STRATEGIES AND PROVEN SYSTEMS.</p>
-        
-        <p class="mt-3">INDIA’S MOST TRUSTED PREMIUM F&B GROWTH PARTNER • 10+ BRANDS • ₹1CR+ REVENUE • 3 CITIES</p>
-
+        <p id="line1" class="mt-3"></p>
+        <p id="line2" class="mt-3"></p>
+        <p id="line3" class="mt-3"></p>
+        <br>
         <a href="#contact" class="btn-gold mt-4">LET'S GROW KITCHEN →</a>
       
       </div>
@@ -166,63 +166,78 @@
 
 
     <!-- PROCESS -->
-    <section id="process">
+    <section id="process-tabs">
       <div class="container">
 
-        <h2 class="section-title">3-Step Growth Process</h2>
+        <h2 class="section-title text-center">3-STEP GROWTH PROCESS</h2>
         <p class="text-center text-light mb-4" style="max-width:780px;margin:auto;">
-          See measurable results in 45 days or less. Here's exactly what we'll do.
+          SEE MEASURABLE RESULTS IN 45 DAYS OR LESS.
         </p>
 
-        <div class="row g-4">
+        <!-- TAB BUTTONS -->
+        <ul class="nav nav-tabs justify-content-center mb-4" id="growthTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="step1-tab" data-bs-toggle="tab" data-bs-target="#step1" type="button" role="tab">DAY 1 – 14</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="step2-tab" data-bs-toggle="tab" data-bs-target="#step2" type="button" role="tab">DAY 15 – 30</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="step3-tab" data-bs-toggle="tab" data-bs-target="#step3" type="button" role="tab">DAY 31 – 45+</button>
+          </li>
+        </ul>
 
-          <!-- STEP 1 -->
-          <div class="col-md-6 fade-in">
+        <!-- TAB CONTENT -->
+        <div class="tab-content" id="growthTabsContent">
+
+          <!-- STEP 1 (ACTIVE) -->
+          <div class="tab-pane fade show active" id="step1" role="tabpanel">
             <div class="premium-card text-center">
               <div class="icon-box"><i class="bi bi-calendar-day fs-3"></i></div>
               <h5 class="mt-3">DAY 1 – DAY 14</h5>
-              <p class="text-muted">Strategic menu engineering and targeted ad campaigns on Swiggy, Zomato, and other aggregators.</p>
+              <p class="text-muted">
+                STRATEGIC MENU ENGINEERING AND HIGH-IMPACT AD CAMPAIGNS ACROSS SWIGGY, ZOMATO, AND OTHER PLATFORMS.
+              </p>
             </div>
           </div>
 
           <!-- STEP 2 -->
-          <div class="col-md-6 fade-in">
+          <div class="tab-pane fade" id="step2" role="tabpanel">
             <div class="premium-card text-center">
               <div class="icon-box"><i class="bi bi-megaphone fs-3"></i></div>
               <h5 class="mt-3">DAY 15 – DAY 30</h5>
-              <p class="text-muted">Data-driven discount strategies and promotional campaigns to maximize conversions and order volume.</p>
+              <p class="text-muted">
+                DATA-BACKED DISCOUNT STRATEGIES AND PROMOTIONAL CAMPAIGNS DESIGNED TO MAXIMIZE CONVERSIONS AND ORDER VOLUME.
+              </p>
             </div>
           </div>
 
           <!-- STEP 3 -->
-          <div class="col-md-6 fade-in">
+          <div class="tab-pane fade" id="step3" role="tabpanel">
             <div class="premium-card text-center">
               <div class="icon-box"><i class="bi bi-graph-up fs-3"></i></div>
-              <h5 class="mt-3">DAY 31 – DAY 45</h5>
-              <p class="text-muted">Visible spike in order frequency and average order value with systematic customer retention tactics.</p>
-            </div>
-          </div>
-
-          <!-- STEP 4 -->
-          <div class="col-md-6 fade-in">
-            <div class="premium-card text-center">
-              <div class="icon-box"><i class="bi bi-cash-coin fs-3"></i></div>
-              <h5 class="mt-3">DAY 45+</h5>
-              <p class="text-muted">Sustained growth with visible profits. Continuous optimization for long-term success.</p>
+              <h5 class="mt-3">DAY 31 – DAY 45+</h5>
+              <p class="text-muted">
+                CONSISTENT GROWTH WITH VISIBLE INCREASES IN ORDER FREQUENCY, AOV, AND CUSTOMER LIFETIME VALUE.
+              </p>
             </div>
           </div>
 
         </div>
+
       </div>
     </section>
+
+
+
 
     <!-- CASE STUDIES -->
     <section id="case-studies">
       <div class="container">
 
-        <h2 class="section-title">Case Studies & Impact</h2>
+        <h2 class="section-title">CASE STUDIES & IMPACT</h2>
         <p class="text-center text-light mb-4" style="max-width:780px;margin:auto;">
-          Proven results from real restaurants and cloud kitchens just like yours.
+          PROVEN RESULTS FROM REAL RESTAURANTS AND CLOUD KITCHENS JUST LIKE YOURS.
         </p>
 
         <div class="row g-4 text-center">
@@ -231,8 +246,8 @@
           <div class="col-md-3 fade-in">
             <div class="premium-card">
               <div class="icon-box"><i class="bi bi-bar-chart-line fs-1"></i></div>
-              <h5 class="mt-3">Order Growth</h5>
-              <p class="text-muted">Within 15–45 days</p>
+              <h5 class="mt-3">ORDER GROWTH</h5>
+              <p class="text-muted">WITHIN 15–45 DAYS</p>
             </div>
           </div>
 
@@ -240,8 +255,8 @@
           <div class="col-md-3 fade-in">
             <div class="premium-card">
               <div class="icon-box"><i class="bi bi-currency-rupee fs-1"></i></div>
-              <h5 class="mt-3">₹3.5 Cr Revenue</h5>
-              <p class="text-muted">Added for our clients</p>
+              <h5 class="mt-3">₹3.5 CR REVENUE</h5>
+              <p class="text-muted">ADDED FOR OUR CLIENTS</p>
             </div>
           </div>
 
@@ -249,8 +264,8 @@
           <div class="col-md-3 fade-in">
             <div class="premium-card">
               <div class="icon-box"><i class="bi bi-bullseye fs-1"></i></div>
-              <h5 class="mt-3">4.6x ROI</h5>
-              <p class="text-muted">Average ad performance</p>
+              <h5 class="mt-3">4.6X ROI</h5>
+              <p class="text-muted">AVERAGE AD PERFORMANCE</p>
             </div>
           </div>
 
@@ -258,8 +273,8 @@
           <div class="col-md-3 fade-in">
             <div class="premium-card">
               <div class="icon-box"><i class="bi bi-people fs-1"></i></div>
-              <h5 class="mt-3">Trusted by Brands</h5>
-              <p class="text-muted">Leading restaurant partners</p>
+              <h5 class="mt-3">TRUSTED BY BRANDS</h5>
+              <p class="text-muted">LEADING RESTAURANT PARTNERS</p>
             </div>
           </div>
 
@@ -267,43 +282,44 @@
       </div>
     </section>
 
+
     <!-- SERVICES -->
     <section id="services">
       <div class="container">
-        <h2 class="section-title">Our Core Areas of Expertise</h2>
-        <p class="text-center text-light">Proven methodologies to increase orders and maximize profitability.</p>
+        <h2 class="section-title">OUR CORE AREAS OF EXPERTISE</h2>
+        <p class="text-center text-light">PROVEN METHODOLOGIES TO INCREASE ORDERS AND MAXIMIZE PROFITABILITY.</p>
 
         <div class="row g-4">
 
           <div class="col-md-3 fade-in">
             <div class="premium-card text-center">
               <div class="icon-box"><i class="bi bi-bar-chart-line fs-3"></i></div>
-              <h5 class="mt-3" style="font-size: clamp(1rem, 2vw, 1.2rem);">Data Analytics</h5>
-              <p class="text-muted mt-2">Track every metric that matters – orders, revenue, customer behavior – to make data-driven decisions.</p>
+              <h5 class="mt-3" style="font-size: clamp(1rem, 2vw, 1.2rem);">DATA ANALYTICS</h5>
+              <p class="text-muted mt-2">TRACK EVERY METRIC THAT MATTERS – ORDERS, REVENUE, CUSTOMER BEHAVIOR – TO MAKE DATA-DRIVEN DECISIONS.</p>
             </div>
           </div>
 
           <div class="col-md-3 fade-in">
             <div class="premium-card text-center">
               <div class="icon-box"><i class="bi bi-journal-text fs-3"></i></div>
-              <h5 class="mt-3" style="font-size: clamp(1rem, 2vw, 1.2rem);">Menu Engineering</h5>
-              <p class="text-muted mt-2">Strategically optimize your menu for maximum profitability with proven pricing strategies.</p>
+              <h5 class="mt-3" style="font-size: clamp(1rem, 2vw, 1.2rem);">MENU ENGINEERING</h5>
+              <p class="text-muted mt-2">STRATEGICALLY OPTIMIZE YOUR MENU FOR MAXIMUM PROFITABILITY WITH PROVEN PRICING STRATEGIES.</p>
             </div>
           </div>
 
           <div class="col-md-3 fade-in">
             <div class="premium-card text-center">
               <div class="icon-box"><i class="bi bi-basket fs-3"></i></div>
-              <h5 class="mt-3" style="font-size: clamp(1rem, 2vw, 1.2rem);">Online Aggregator Marketing</h5>
-              <p class="text-muted mt-2">Dominate Swiggy, Zomato, and other platforms with proven optimization and marketing tactics.</p>
+              <h5 class="mt-3" style="font-size: clamp(1rem, 2vw, 1.2rem);">ONLINE AGGREGATOR MARKETING</h5>
+              <p class="text-muted mt-2">DOMINATE SWIGGY, ZOMATO, AND OTHER PLATFORMS WITH PROVEN OPTIMIZATION AND MARKETING TACTICS.</p>
             </div>
           </div>
 
           <div class="col-md-3 fade-in">
             <div class="premium-card text-center">
               <div class="icon-box"><i class="bi bi-cash-coin fs-3"></i></div>
-              <h5 class="mt-3" style="font-size: clamp(1rem, 2vw, 1.2rem);">Pricing Optimization</h5>
-              <p class="text-muted mt-2">Dynamic pricing strategies that maximize revenue while staying competitive in your market.</p>
+              <h5 class="mt-3" style="font-size: clamp(1rem, 2vw, 1.2rem);">PRICING OPTIMIZATION</h5>
+              <p class="text-muted mt-2">DYNAMIC PRICING STRATEGIES THAT MAXIMIZE REVENUE WHILE STAYING COMPETITIVE IN YOUR MARKET.</p>
             </div>
           </div>
 
@@ -315,7 +331,7 @@
     <section id="trusted-by">
       <div class="container">
 
-        <h2 class="section-title">Trusted by Leading Restaurant Brands</h2>
+        <h2 class="section-title">TRUSTED BY LEADING RESTAURANT BRANDS</h2>
 
         <div class="row g-4 text-center" style="max-width:900px;margin:auto;">
 
@@ -372,54 +388,65 @@
       </div>
     </section>
 
+
     <!-- CITY SHOWCASE -->
     <section id="locations" class="city-section">
       <div class="container text-center">
 
-        <h2 class="section-title">Where We Operate</h2>
-        <p class="text-light mb-4">Supporting top restaurants across India’s major metropolitan cities</p>
+        <h2 class="section-title">WHERE WE OPERATE</h2>
+        <p class="text-light mb-4">SUPPORTING TOP RESTAURANTS ACROSS INDIA’S MAJOR METROPOLITAN CITIES</p>
 
         <div class="row g-4 justify-content-center">
 
           <!-- City 1 -->
-          <div class="col-6 col-md-4 fade-in">
-            <div class="premium-card py-4">
-              <i class="bi bi-geo-alt-fill fs-2" style="color: var(--red);"></i>
-              <h5 class="mt-2">Mumbai</h5>
+          <div class="premium-card py-4">
+            <div class="location-svg mb-2">
+              <svg width="55" height="55" viewBox="0 0 64 64" fill="none" stroke="var(--red)" stroke-width="2">
+                <path d="M10 54h44M14 54V28h36v26M22 28v-8h20v8M26 20v-6h12v6" />
+              </svg>
             </div>
+            <h5 class="mt-2">MUMBAI</h5>
           </div>
 
           <!-- City 2 -->
-          <div class="col-6 col-md-4 fade-in">
-            <div class="premium-card py-4">
-              <i class="bi bi-geo-alt-fill fs-2" style="color: var(--red);"></i>
-              <h5 class="mt-2">Delhi NCR</h5>
+          <div class="premium-card py-4">
+            <div class="location-svg mb-2">
+              <svg width="55" height="55" viewBox="0 0 64 64" stroke="var(--red)" fill="none" stroke-width="2">
+                <path d="M18 54h28M22 54V26h20v28M24 26v-8h16v8M26 18v-4h12v4" />
+              </svg>
             </div>
+            <h5 class="mt-2">DELHI NCR</h5>
           </div>
+
 
           <!-- City 3 -->
-          <div class="col-6 col-md-4 fade-in">
-            <div class="premium-card py-4">
-              <i class="bi bi-geo-alt-fill fs-2" style="color: var(--red);"></i>
-              <h5 class="mt-2">Bangalore</h5>
+          <div class="premium-card py-4">
+            <div class="location-svg mb-2">
+              <svg width="55" height="55" viewBox="0 0 64 64" stroke="var(--red)" fill="none" stroke-width="2">
+                <path d="M12 54h40M16 54V30h32v24M24 30v-6h16v6M28 24v-4h8v4" />
+              </svg>
             </div>
+            <h5 class="mt-2">BANGALORE</h5>
           </div>
 
-          <!-- City 4 -->
-          <div class="col-6 col-md-4 fade-in">
-            <div class="premium-card py-4">
-              <i class="bi bi-geo-alt-fill fs-2" style="color: var(--red);"></i>
-              <h5 class="mt-2">Hyderabad</h5>
+          <div class="premium-card py-4">
+            <div class="location-svg mb-2">
+              <svg width="55" height="55" viewBox="0 0 64 64" stroke="var(--red)" fill="none" stroke-width="2">
+                <path d="M14 54h36M18 54V28h28v26M22 28v-8h20v8M24 20v-6h16v6" />
+              </svg>
             </div>
+            <h5 class="mt-2">HYDERABAD</h5>
           </div>
 
-          <!-- City 5 -->
-          <div class="col-6 col-md-4 fade-in">
-            <div class="premium-card py-4">
-              <i class="bi bi-geo-alt-fill fs-2" style="color: var(--red);"></i>
-              <h5 class="mt-2">Chennai</h5>
+          <div class="premium-card py-4">
+            <div class="location-svg mb-2">
+              <svg width="55" height="55" viewBox="0 0 64 64" stroke="var(--red)" fill="none" stroke-width="2">
+                <path d="M28 54h8M30 54V20h4v34M26 20h12M28 16h8" />
+              </svg>
             </div>
+            <h5 class="mt-2">CHENNAI</h5>
           </div>
+
 
         </div>
       </div>
@@ -428,58 +455,59 @@
     <!-- PLANS -->
     <section id="plans">
       <div class="container">
-        <h2 class="section-title text-center">Choose Your Growth Tier</h2>
+        <h2 class="section-title text-center">CHOOSE YOUR GROWTH TIER</h2>
 
         <div class="row g-4 justify-content-center">
 
           <div class="col-md-4 fade-in">
             <div class="premium-card">
-              <h4 style="font-size: clamp(1.1rem, 2vw, 1.3rem);">Starter</h4>
+              <h4 style="font-size: clamp(1.1rem, 2vw, 1.3rem);">STARTER</h4>
               <h2 class="text-dark mt-2" style="font-size: clamp(1.8rem, 4vw, 2.2rem);">₹59,999</h2>
-              <p class="text-muted mt-3">Ideal for new or single-unit restaurants.</p>
+              <p class="text-muted mt-3">IDEAL FOR NEW OR SINGLE-UNIT RESTAURANTS.</p>
               <ul class="text-start text-muted small mt-3" style="list-style: none; padding: 0;">
-                <li>✓ Menu audit</li>
-                <li>✓ Pricing strategy</li>
-                <li>✓ 30-day support</li>
+                <li>✓ MENU AUDIT</li>
+                <li>✓ PRICING STRATEGY</li>
+                <li>✓ 30-DAY SUPPORT</li>
               </ul>
-              <a href="#contact" class="btn-gold w-100 mt-4" style="text-align: center;">Get Started</a>
+              <a href="#contact" class="btn-gold w-100 mt-4" style="text-align: center;">GET STARTED</a>
             </div>
           </div>
 
           <div class="col-md-4 fade-in">
             <div class="premium-card plan-highlight">
               <span style="background: var(--gold); color: #000; padding: 6px 14px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; display: inline-block; margin-bottom: 10px;">MOST POPULAR</span>
-              <h4 style="font-size: clamp(1.1rem, 2vw, 1.3rem);">Elite</h4>
+              <h4 style="font-size: clamp(1.1rem, 2vw, 1.3rem);">ELITE</h4>
               <h2 class="text-dark mt-2" style="font-size: clamp(1.8rem, 4vw, 2.2rem);">₹1,79,999</h2>
-              <p class="text-muted mt-3">Our flagship high-impact transformation package.</p>
-              <ul class="text-start text-muted small mt-3" style="list-style: none; padding: 0;">
-                <li>✓ Complete brand audit</li>
-                <li>✓ Marketing strategy</li>
-                <li>✓ Staff training</li>
-                <li>✓ 90-day support</li>
+              <p class="text-muted mt-3">OUR FLAGSHIP HIGH-IMPACT TRANSFORMATION PACKAGE.</p>
+              <ul class="text-start text-muted small mt-3" style="list-style: none; padding: 0%;">
+                <li>✓ COMPLETE BRAND AUDIT</li>
+                <li>✓ MARKETING STRATEGY</li>
+                <li>✓ STAFF TRAINING</li>
+                <li>✓ 90-DAY SUPPORT</li>
               </ul>
-              <a href="#contact" class="btn-gold w-100 mt-4" style="text-align: center;">Start Transformation</a>
+              <a href="#contact" class="btn-gold w-100 mt-4" style="text-align: center;">START TRANSFORMATION</a>
             </div>
           </div>
 
           <div class="col-md-4 fade-in">
             <div class="premium-card">
-              <h4 style="font-size: clamp(1.1rem, 2vw, 1.3rem);">Enterprise</h4>
-              <h2 class="text-dark mt-2" style="font-size: clamp(1.8rem, 4vw, 2.2rem);">Custom</h2>
-              <p class="text-muted mt-3">For restaurant chains & hospitality groups.</p>
-              <ul class="text-start text-muted small mt-3" style="list-style: none; padding: 0;">
-                <li>✓ Multi-location support</li>
-                <li>✓ Custom solutions</li>
-                <li>✓ Dedicated team</li>
-                <li>✓ 12-month partnership</li>
+              <h4 style="font-size: clamp(1.1rem, 2vw, 1.3rem);">ENTERPRISE</h4>
+              <h2 class="text-dark mt-2" style="font-size: clamp(1.8rem, 4vw, 2.2rem);">CUSTOM</h2>
+              <p class="text-muted mt-3">FOR RESTAURANT CHAINS & HOSPITALITY GROUPS.</p>
+              <ul class="text-start text-muted small mt-3" style="list-style: none; padding: 0%;">
+                <li>✓ MULTI-LOCATION SUPPORT</li>
+                <li>✓ CUSTOM SOLUTIONS</li>
+                <li>✓ DEDICATED TEAM</li>
+                <li>✓ 12-MONTH PARTNERSHIP</li>
               </ul>
-              <a href="#contact" class="btn-gold w-100 mt-4" style="text-align: center;">Contact Us</a>
+              <a href="#contact" class="btn-gold w-100 mt-4" style="text-align: center;">CONTACT US</a>
             </div>
           </div>
 
         </div>
       </div>
     </section>
+
 
     <!-- CONTACT -->
     <section id="contact">
@@ -488,7 +516,7 @@
 
         <div class="row g-4 align-items-stretch">
 
-          <!-- FORM -->
+          <!-- FORM
           <div class="col-lg-6 fade-in">
             <form id="contactForm" class="needs-validation" novalidate>
               <input class="form-control mb-3" type="text" placeholder="Your Name" required>
@@ -499,10 +527,10 @@
               <button type="submit" class="btn-gold w-100">Book Free Strategy Call →</button>
               <small class="text-muted d-block mt-2">We'll contact you within 24 hours</small>
             </form>
-          </div>
+          </div> -->
 
           <!-- CONTACT INFO -->
-          <div class="col-lg-6">
+          <div class="col-lg-12">
             <aside class="premium-card h-100" role="region">
 
               <h5 class="mb-3">
@@ -564,12 +592,68 @@
       </div>
     </section>
 
+    <!-- TESTIMONIALS -->
+    <section id="testimonials">
+      <div class="container">
+
+        <h2 class="section-title text-center">What Our Partners Say</h2>
+        <p class="text-center text-light mb-4" style="max-width:780px;margin:auto;">
+          Real feedback from restaurant founders and hospitality leaders we’ve helped grow.
+        </p>
+
+        <div class="row g-4">
+
+          <!-- Testimonial 1 -->
+          <div class="col-md-4 fade-in">
+            <div class="premium-card text-center p-4">
+              <!-- <img src="https://i.pravatar.cc/120?img=3" alt="Client" class="rounded-circle mb-3" width="90" height="90"> -->
+              <h5 class="mb-1">Rahul Verma</h5>
+              <p class="text-muted small">Founder – Spice Street</p>
+              <p class="mt-3 text-dark" style="font-size: 0.9rem;">
+                “KREAD transformed our online orders within weeks. Their menu engineering and
+                aggregator strategy increased our revenue by 2.8x.”
+              </p>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="col-md-4 fade-in">
+            <div class="premium-card text-center p-4">
+              <!-- <img src="https://i.pravatar.cc/120?img=5" alt="Client" class="rounded-circle mb-3" width="90" height="90"> -->
+              <h5 class="mb-1">Aisha Khan</h5>
+              <p class="text-muted small">Owner – Biryani Junction</p>
+              <p class="mt-3 text-dark" style="font-size: 0.9rem;">
+                “We saw a 150% increase in order volume in just 30 days. Their growth system is the most effective
+                we've ever used.”
+              </p>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="col-md-4 fade-in">
+            <div class="premium-card text-center p-4">
+              <!-- <img src="https://i.pravatar.cc/120?img=9" alt="Client" class="rounded-circle mb-3" width="90" height="90"> -->
+              <h5 class="mb-1">Sandeep Mehra</h5>
+              <p class="text-muted small">CEO – Urban Grill</p>
+              <p class="mt-3 text-dark" style="font-size: 0.9rem;">
+                “Their data-driven approach helped us cut costs and boost profits. Highly recommend
+                for any restaurant serious about growth.”
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
     <!-- FOOTER -->
     <footer>
       <div class="container">
         <div class="row g-4 mb-4">
           <div class="col-md-4">
-            <div class="footer-brand">KREAD<span>.in</span></div>
+            <div class="footer-brand">KREAD</div>
             <p class="text-light small mt-2">India's Most Elite Restaurant Growth Partner</p>
           </div>
           <div class="col-md-4">
