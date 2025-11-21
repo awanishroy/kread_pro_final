@@ -378,6 +378,22 @@ textarea.form-control {
     min-height: 120px;
 }
 
+.contact-link {
+    color: var(--gold);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color .3s ease, opacity .3s ease;
+    display: inline-block;
+    margin-top: 2px;
+}
+
+.contact-link:hover {
+    color: var(--red);
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+
 
 /* Contact section mobile optimization */
 @media (max-width: 576px) {
