@@ -739,3 +739,15 @@ footer::before {
     padding-top: 1.5rem;
     }
 }
+
+#self-audit table th {
+  width: 30%;
+  background: rgba(179, 36, 40, 0.05);
+  font-weight: 600;
+  vertical-align: top;
+}
+
+#self-audit table td {
+  color: var(--text-muted);
+  line-height: 1.6;
+}
