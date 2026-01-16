@@ -751,3 +751,68 @@ footer::before {
   color: var(--text-muted);
   line-height: 1.6;
 }
+
+
+/* =========================
+   WEBINAR HERO – MOBILE TUNING
+   ========================= */
+@media (max-width: 768px) {
+
+  #webinar-hero {
+    padding: 90px 0 70px !important;
+  }
+
+  #webinar-hero .section-title {
+    font-size: 2.1rem !important;
+    line-height: 1.25;
+  }
+
+  #webinar-hero p {
+    font-size: 1.05rem;
+  }
+
+  #webinar-hero .premium-card {
+    padding: 1.25rem;
+  }
+
+  /* Big ❌ lines */
+  #webinar-hero .premium-card p[style*="1.8rem"] {
+    font-size: 1.3rem !important;
+  }
+
+  /* Quote */
+  #webinar-hero p[style*="1.6rem"] {
+    font-size: 1.25rem !important;
+  }
+
+  /* Control block text */
+  #webinar-hero p[style*="1.4rem"] {
+    font-size: 1.15rem !important;
+  }
+
+}
+
+/* =========================
+   SELF AUDIT – CENTER EVERYTHING
+   ========================= */
+#self-audit {
+  text-align: center;
+}
+
+#self-audit table th,
+#self-audit table td {
+  text-align: center !important;
+  vertical-align: middle;
+}
+
+/* Center collapse trigger buttons */
+#self-audit button {
+  text-align: center !important;
+}
+
+/* Optional: make table headers pop */
+#self-audit table th {
+  font-weight: 600;
+  color: var(--gold);
+}
+
